@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Bookmark.Domain.Auth;
-using System.Collections.Generic;
+﻿using Bookmark.Domain.Auth;
 using Bookmark.Domain.Enum;
+using System.Collections.Generic;
 
 namespace Bookmark.Persistence.Seeds
 {

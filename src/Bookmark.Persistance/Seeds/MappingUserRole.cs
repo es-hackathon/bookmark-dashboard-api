@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Bookmark.Domain.Enum;
+using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
-using Bookmark.Domain.Enum;
 
 namespace Bookmark.Persistence.Seeds
 {
