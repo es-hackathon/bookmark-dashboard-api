@@ -196,7 +196,7 @@ namespace Bookmark.Infrastructure.Services
             var account = await _userManager.FindByEmailAsync(model.Email);
 
             // always return ok response to prevent email enumeration
-            if (account == null) return;
+            if (account == null) { return; }
 
             var code = await _userManager.GeneratePasswordResetTokenAsync(account);
             var route = "api/account/reset-password/";
@@ -213,7 +213,7 @@ namespace Bookmark.Infrastructure.Services
         public async Task<Response<string>> ResetPassword(ResetPasswordRequest model)
         {
             var account = await _userManager.FindByEmailAsync(model.Email);
-            if (account == null) throw new ApiException($"No Accounts Registered with {model.Email}.");
+            if (account == null) { throw new ApiException($"No Accounts Registered with {model.Email}."); }
             var result = await _userManager.ResetPasswordAsync(account, model.Token, model.Password);
             if (result.Succeeded)
             {
