@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
 
-namespace Bookmark.Persistence.Seeds
+namespace Bookmark.Infrastructure.Seeds
 {
     public static class MappingUserRole
     {

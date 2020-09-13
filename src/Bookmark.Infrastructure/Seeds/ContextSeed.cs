@@ -1,4 +1,5 @@
 ﻿using Bookmark.Domain.Auth;
+using Bookmark.Infrastructure.Seeds;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;

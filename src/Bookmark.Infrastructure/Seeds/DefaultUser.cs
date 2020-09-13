@@ -2,7 +2,7 @@
 using Bookmark.Domain.Enum;
 using System.Collections.Generic;
 
-namespace Bookmark.Persistence.Seeds
+namespace Bookmark.Infrastructure.Seeds
 {
     public static class DefaultUser
     {
