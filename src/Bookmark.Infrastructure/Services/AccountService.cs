@@ -27,18 +27,15 @@ namespace Bookmark.Infrastructure.Services
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailService _emailService;
         private readonly JWTSettings _jwtSettings;
-        private readonly IDateTimeService _dateTimeService;
         public AccountService(UserManager<ApplicationUser> userManager,
             RoleManager<IdentityRole> roleManager,
             IOptions<JWTSettings> jwtSettings,
-            IDateTimeService dateTimeService,
             SignInManager<ApplicationUser> signInManager,
             IEmailService emailService)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _jwtSettings = jwtSettings.Value;
-            _dateTimeService = dateTimeService;
             _signInManager = signInManager;
             _emailService = emailService;
         }

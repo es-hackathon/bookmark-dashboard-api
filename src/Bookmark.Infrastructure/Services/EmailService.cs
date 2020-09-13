@@ -1,13 +1,12 @@
 ﻿using Bookmark.Application.Common.Exceptions;
 using Bookmark.Common;
 using Bookmark.Domain.Settings;
+using MailKit.Net.Smtp;
+using MailKit.Security;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MimeKit;
-using System;
 using System.Threading.Tasks;
-using MailKit.Net.Smtp;
-using MailKit.Security;
 
 namespace Bookmark.Infrastructure.Services
 {
@@ -47,6 +46,6 @@ namespace Bookmark.Infrastructure.Services
             }
         }
 
-      
+
     }
 }

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Bookmark.Persistance
+namespace Bookmark.Infrastructure
 {
     public class IdentityContext : IdentityDbContext<ApplicationUser>
     {
