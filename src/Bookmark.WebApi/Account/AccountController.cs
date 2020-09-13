@@ -1,10 +1,6 @@
 ﻿using Bookmark.Application.Common.Interface;
 using Bookmark.Domain.Auth;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Bookmark.WebApi.Account
