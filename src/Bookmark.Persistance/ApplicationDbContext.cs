@@ -1,11 +1,6 @@
 ﻿using Bookmark.Application.Common.Interface;
-using Bookmark.Domain.Common;
 using Bookmark.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -22,11 +17,11 @@ namespace Bookmark.Persistance
         {
             ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
-         
-        public DbSet<Cards> Cards  { get; set; }
-        public DbSet<Groups> Groups  { get; set; }
-        public DbSet<GroupShared> GroupShared  { get; set; }
-        public DbSet<CardFavorite> CardFavorite  { get; set; }
+
+        public DbSet<Cards> Cards { get; set; }
+        public DbSet<Groups> Groups { get; set; }
+        public DbSet<GroupShared> GroupShared { get; set; }
+        public DbSet<CardFavorite> CardFavorite { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -20,6 +20,7 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\Bookmark.Infrastructure\Bookmark.Infrastructure.csproj" />
     <ProjectReference Include="..\Bookmark.Persistance\Bookmark.Persistance.csproj" />
   </ItemGroup>
   

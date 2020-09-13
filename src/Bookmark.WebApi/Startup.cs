@@ -1,3 +1,6 @@
+using Bookmark.Common;
+using Bookmark.Infrastructure;
+using Bookmark.Infrastructure.Services;
 using Bookmark.Persistance;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,6 +30,9 @@ namespace Bookmark.WebApi
                 opt.UseSqlServer(Configuration.GetConnectionString("BookmarkConn")
           ));
 
+            services.AddIdentityInfrastructure(Configuration);
+            services.AddTransient<IEmailService, MailService>();
+      
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -39,6 +45,8 @@ namespace Bookmark.WebApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
