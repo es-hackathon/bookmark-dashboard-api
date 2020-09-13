@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bookmark.Persistance.Migrations.Application
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200913093330_Initial-commit-Application")]
+    [Migration("20200913094928_Initial-commit-Application")]
     partial class InitialcommitApplication
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
