@@ -13,7 +13,7 @@ namespace Bookmark.Persistance
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
-        // This constructor is used of runit testing
+        // This constructor is used of nunit testing
         public ApplicationDbContext()
         {
 
