@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Bookmark.Infrastructure
+﻿namespace Bookmark.Infrastructure
 {
     public class Class1
     {

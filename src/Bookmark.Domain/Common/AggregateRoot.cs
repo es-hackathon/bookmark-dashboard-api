@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Bookmark.Domain.Common
+﻿namespace Bookmark.Domain.Common
 {
     public abstract class AggregateRoot<TKey> : Entity<TKey>
     {

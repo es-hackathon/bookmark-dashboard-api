@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Bookmark.Application
+﻿namespace Bookmark.Application
 {
     public class Class1
     {

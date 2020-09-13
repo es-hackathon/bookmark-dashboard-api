@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Bookmark.Persistance
+﻿namespace Bookmark.Persistance
 {
     public class Class1
     {
