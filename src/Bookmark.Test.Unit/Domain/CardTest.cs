@@ -11,7 +11,7 @@ namespace Bookmark.Test.Unit.Domain
     public class CardTest
     {
         private readonly Cards _cards;
-        private readonly Guid Id;
+        private readonly Guid Id = Guid.NewGuid();
         private const string Name = "Test";
         private const string Description = "Test Description";
         private const string Url = "https://amitpnk.github.io/";
