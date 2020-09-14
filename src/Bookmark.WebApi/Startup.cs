@@ -18,6 +18,7 @@ using System.Reflection;
 using Microsoft.OpenApi.Models;
 using System.Collections.Generic;
 using Bookmark.Application.Common.Middleware;
+using Bookmark.Application;
 
 namespace Bookmark.WebApi
 {
@@ -34,6 +35,8 @@ namespace Bookmark.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddApplication();
 
             services.AddDbContext<ApplicationDbContext>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("BookmarkConn")
