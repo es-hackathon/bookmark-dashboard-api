@@ -92,8 +92,8 @@ namespace Bookmark.Persistance.Migrations.Application
                     b.Property<Guid?>("CardsId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("GroupsId")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("GroupsId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<byte[]>("RowVersion")
                         .IsConcurrencyToken()
@@ -111,10 +111,9 @@ namespace Bookmark.Persistance.Migrations.Application
 
             modelBuilder.Entity("Bookmark.Domain.Entities.Groups", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");

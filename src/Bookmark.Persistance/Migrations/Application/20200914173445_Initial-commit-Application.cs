@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Bookmark.Persistance.Migrations.Application
 {
@@ -31,8 +31,7 @@ namespace Bookmark.Persistance.Migrations.Application
                 name: "Groups",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(nullable: false),
                     RowVersion = table.Column<byte[]>(rowVersion: true, nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
@@ -72,7 +71,7 @@ namespace Bookmark.Persistance.Migrations.Application
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RowVersion = table.Column<byte[]>(rowVersion: true, nullable: true),
                     CardsId = table.Column<Guid>(nullable: true),
-                    GroupsId = table.Column<int>(nullable: true)
+                    GroupsId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {

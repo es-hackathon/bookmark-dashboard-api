@@ -1,7 +1,9 @@
+using Bookmark.Application;
+using Bookmark.Application.Common.Interface;
+using Bookmark.Application.Common.Middleware;
 using Bookmark.Common;
 using Bookmark.Infrastructure;
 using Bookmark.Infrastructure.Services;
-using Bookmark.Application.Common.Interface;
 using Bookmark.Persistance;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,13 +13,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using Serilog;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using Microsoft.OpenApi.Models;
-using System.Collections.Generic;
-using Bookmark.Application.Common.Middleware;
 
 namespace Bookmark.WebApi
 {
@@ -35,9 +36,12 @@ namespace Bookmark.WebApi
         {
             services.AddControllers();
 
+            services.AddApplication();
+
             services.AddDbContext<ApplicationDbContext>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("BookmarkConn")
-          ));
+             ));
+            services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
 
             services.AddIdentityInfrastructure(Configuration);
@@ -90,7 +94,6 @@ namespace Bookmark.WebApi
                 setupAction.IncludeXmlComments(xmlCommentsFullPath);
             });
 
-            services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
             services.AddApiVersioning(config =>
             {
@@ -99,7 +102,7 @@ namespace Bookmark.WebApi
                 config.ReportApiVersions = true;
             });
 
-
+            services.AddMemoryCache();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory log)
@@ -113,8 +116,6 @@ namespace Bookmark.WebApi
                     options.WithOrigins("http://localhost:3000")
                    .AllowAnyHeader()
                    .AllowAnyMethod());
-
-            log.AddSerilog();
 
             log.AddSerilog();
 

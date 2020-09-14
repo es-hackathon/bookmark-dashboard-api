@@ -1,12 +1,13 @@
 ﻿using Bookmark.Domain.Entities;
 using NUnit.Framework;
+using System;
 
 namespace Bookmark.Test.Unit.Domain
 {
     public class GroupTest
     {
         private readonly Groups _groups;
-        private const int Id = 1;
+        private readonly Guid Id = Guid.NewGuid();
         private const string Name = "Test";
         private const bool IsActive = true;
         private const string Description = "Test Description";
