@@ -12,6 +12,9 @@ namespace Bookmark.Application.Common.Exceptions
         {
             Failures = new Dictionary<string, string[]>();
         }
+        public ValidationException(string message) : base(message)
+        {
+        }
 
         public ValidationException(List<ValidationFailure> failures)
             : this()
