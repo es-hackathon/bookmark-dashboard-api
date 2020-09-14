@@ -36,7 +36,7 @@ namespace Bookmark.WebApi.Cards.v1
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesDefaultResponseType]
-        public async Task<ActionResult<CreateCardViewModel>> Create([FromBody] CreateCardViewModel command)
+        public async Task<ActionResult<CreateCardViewModel>> Create([FromBody] CreateCardCommand command)
         {
             var vm = await Mediator.Send(command);
 
