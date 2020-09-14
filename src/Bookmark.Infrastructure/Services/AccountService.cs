@@ -47,15 +47,18 @@ namespace Bookmark.Infrastructure.Services
             {
                 throw new ApiException($"No Accounts Registered with {request.Email}.");
             }
-            var result = await _signInManager.PasswordSignInAsync(user.UserName, request.Password, false, lockoutOnFailure: false);
-            if (!result.Succeeded)
-            {
-                throw new ApiException($"Invalid Credentials for '{request.Email}'.");
-            }
-            if (!user.EmailConfirmed)
-            {
-                throw new ApiException($"Account Not Confirmed for '{request.Email}'.");
-            }
+
+            //TODO: Need to check below code
+            //var result = await _signInManager.PasswordSignInAsync(user.UserName, request.Password, false, lockoutOnFailure: false);
+            //if (!result.Succeeded)
+            //{
+            //    throw new ApiException($"Invalid Credentials for '{request.Email}'.");
+            //}
+
+            //if (!user.EmailConfirmed)
+            //{
+            //    throw new ApiException($"Account Not Confirmed for '{request.Email}'.");
+            //}
             JwtSecurityToken jwtSecurityToken = await GenerateJWToken(user);
             AuthenticationResponse response = new AuthenticationResponse();
             response.Id = user.Id;

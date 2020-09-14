@@ -17,6 +17,7 @@ using System.IO;
 using System.Reflection;
 using Microsoft.OpenApi.Models;
 using System.Collections.Generic;
+using Bookmark.Application.Common.Middleware;
 
 namespace Bookmark.WebApi
 {
@@ -38,11 +39,11 @@ namespace Bookmark.WebApi
                 opt.UseSqlServer(Configuration.GetConnectionString("BookmarkConn")
           ));
 
- 
+
             services.AddIdentityInfrastructure(Configuration);
             services.AddTransient<IEmailService, MailService>();
-      
- 
+
+
             services.AddSwaggerGen(setupAction =>
             {
                 setupAction.SwaggerDoc(
@@ -64,14 +65,14 @@ namespace Bookmark.WebApi
                             Url = new Uri("https://opensource.org/licenses/MIT")
                         }
                     });
-                    setupAction.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-                    {
-                        Type = SecuritySchemeType.Http,
-                        Scheme = "bearer",
-                        BearerFormat = "JWT",
-                        Description = $"Input your Bearer token in this format - Bearer token to access this API",
-                    });
-                    setupAction.AddSecurityRequirement(new OpenApiSecurityRequirement
+                setupAction.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "bearer",
+                    BearerFormat = "JWT",
+                    Description = $"Input your Bearer token in this format - Bearer token to access this API",
+                });
+                setupAction.AddSecurityRequirement(new OpenApiSecurityRequirement
                     {
                         {
                             new OpenApiSecurityScheme
@@ -98,7 +99,7 @@ namespace Bookmark.WebApi
                 config.ReportApiVersions = true;
             });
 
- 
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory log)
@@ -108,17 +109,16 @@ namespace Bookmark.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(options =>
+                    options.WithOrigins("http://localhost:3000")
+                   .AllowAnyHeader()
+                   .AllowAnyMethod());
+
             log.AddSerilog();
 
-            //app.UseMiddleware<CustomExceptionHandlerMiddleware>();
+            log.AddSerilog();
 
-            app.UseSwagger();
-
-            app.UseSwaggerUI(setupAction =>
-            {
-                setupAction.SwaggerEndpoint("/swagger/OpenAPISpecification/swagger.json", "Clean Architecture WebAPI");
-                setupAction.RoutePrefix = "OpenAPI";
-            });
+            app.UseMiddleware<CustomExceptionHandlerMiddleware>();
 
             app.UseHttpsRedirection();
 
@@ -128,6 +128,13 @@ namespace Bookmark.WebApi
 
             app.UseAuthorization();
 
+            app.UseSwagger();
+
+            app.UseSwaggerUI(setupAction =>
+            {
+                setupAction.SwaggerEndpoint("/swagger/OpenAPISpecification/swagger.json", "Clean Architecture WebAPI");
+                setupAction.RoutePrefix = "OpenAPI";
+            });
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

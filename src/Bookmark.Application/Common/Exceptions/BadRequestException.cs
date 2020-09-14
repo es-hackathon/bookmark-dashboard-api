@@ -1,7 +1,12 @@
-﻿namespace Bookmark.Application.Common.Exceptions
-{
-    public class BadRequestException
-    {
+﻿using System;
 
+namespace Bookmark.Application.Common.Exceptions
+{
+    public class BadRequestException : Exception
+    {
+        public BadRequestException(string message)
+            : base(message)
+        {
+        }
     }
 }
