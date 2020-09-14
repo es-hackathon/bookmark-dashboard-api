@@ -2,8 +2,6 @@
 using Bookmark.Application.Common.Interface;
 using Bookmark.Domain.Entities;
 using MediatR;
-using Microsoft.EntityFrameworkCore.Internal;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 

@@ -21,7 +21,7 @@ namespace Bookmark.Application.Features.CardFeature.Commands.CreateCard
         {
             var entity = new Cards
             {
-                Id= Guid.NewGuid(),
+                Id = Guid.NewGuid(),
                 Name = request.Name,
                 Description = request.Description,
                 DisplayIcon = request.DisplayIcon,

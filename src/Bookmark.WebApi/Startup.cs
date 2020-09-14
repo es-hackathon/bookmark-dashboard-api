@@ -1,7 +1,9 @@
+using Bookmark.Application;
+using Bookmark.Application.Common.Interface;
+using Bookmark.Application.Common.Middleware;
 using Bookmark.Common;
 using Bookmark.Infrastructure;
 using Bookmark.Infrastructure.Services;
-using Bookmark.Application.Common.Interface;
 using Bookmark.Persistance;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,14 +13,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using Serilog;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using Microsoft.OpenApi.Models;
-using System.Collections.Generic;
-using Bookmark.Application.Common.Middleware;
-using Bookmark.Application;
 
 namespace Bookmark.WebApi
 {
@@ -94,7 +94,7 @@ namespace Bookmark.WebApi
                 setupAction.IncludeXmlComments(xmlCommentsFullPath);
             });
 
-     
+
             services.AddApiVersioning(config =>
             {
                 config.DefaultApiVersion = new ApiVersion(1, 0);
