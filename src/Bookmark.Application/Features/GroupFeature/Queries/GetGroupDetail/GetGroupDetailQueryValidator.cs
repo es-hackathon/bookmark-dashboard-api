@@ -6,7 +6,7 @@ namespace Bookmark.Application.Features.GroupFeature.Queries.GetGroupDetail
     {
         public GetGroupDetailQueryValidator()
         {
-            //RuleFor(v => v.Id).NotEmpty().Length(5);
+            RuleFor(v => v.Id).NotEmpty();
         }
     }
 }

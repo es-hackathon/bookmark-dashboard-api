@@ -36,12 +36,6 @@ namespace Bookmark.Application.Features.CardFeature.Commands.DeleteCard
                 throw new NotFoundException(nameof(Cards), request.Id);
             }
 
-            //var hasRecord = _context.Sales.Any(o => o.CardId == entity.Id);
-            //if (hasRecord)
-            //{
-            //    throw new DeleteFailureException(nameof(Cards), request.Id, "There are existing customer id associated with this Sales");
-            //}
-
             _context.Cards.Remove(entity);
 
             await _context.SaveChangesAsync(cancellationToken);
