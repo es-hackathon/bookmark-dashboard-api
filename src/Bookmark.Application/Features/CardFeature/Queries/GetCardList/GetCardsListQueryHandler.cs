@@ -25,22 +25,9 @@ namespace Bookmark.Application.Features.CardFeature.Queries.GetCardsList
 
         public async Task<IEnumerable<CardsListViewModel>> Handle(GetCardsListQuery request, CancellationToken cancellationToken)
         {
-
-            var cacheKey = "customerList";
-            if (!_memoryCache.TryGetValue(cacheKey, out IEnumerable<CardsListViewModel> customerListVm))
-            {
-                var customerList = await _context.Cards.ToListAsync(cancellationToken);
-                customerListVm = _mapper.Map<IEnumerable<CardsListViewModel>>(customerList);
-                var cacheExpiryOptions = new MemoryCacheEntryOptions
-                {
-                    AbsoluteExpiration = DateTime.Now.AddMinutes(5),
-                    Priority = CacheItemPriority.High,
-                    SlidingExpiration = TimeSpan.FromMinutes(2)
-                };
-                _memoryCache.Set(cacheKey, customerListVm, cacheExpiryOptions);
-            }
-
-            return customerListVm;
+            var cardsList = await _context.Cards.ToListAsync(cancellationToken);
+            var cardsListVm = _mapper.Map<IEnumerable<CardsListViewModel>>(cardsList);
+            return cardsListVm;
         }
     }
 }
