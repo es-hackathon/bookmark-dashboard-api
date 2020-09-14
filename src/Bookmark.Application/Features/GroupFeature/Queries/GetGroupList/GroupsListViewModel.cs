@@ -10,10 +10,7 @@ namespace Bookmark.Application.Features.GroupFeature.Queries.GetGroupsList
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string Url { get; set; }
-        public string DisplayIcon { get; set; }
-        public DateTime? ExpireDate { get; set; }
-
+        public bool IsActive { get; set; }
         public void Mapping(Profile profile)
         {
             profile.CreateMap<Groups, GroupsListViewModel>()

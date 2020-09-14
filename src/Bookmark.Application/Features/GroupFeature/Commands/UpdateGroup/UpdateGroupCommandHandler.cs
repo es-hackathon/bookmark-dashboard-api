@@ -29,12 +29,9 @@ namespace Bookmark.Application.Features.GroupFeature.Commands.UpdateGroup
                 throw new NotFoundException(nameof(Groups), request.Id);
             }
 
-            entity.Id = request.Id;
             entity.Name = request.Name;
             entity.Description = request.Description;
-            entity.Url = request.Url;
-            entity.DisplayIcon = request.DisplayIcon;
-            entity.ExpireDate = request.ExpireDate;
+            entity.IsActive = request.IsActive;
 
             _context.Groups.Update(entity);
             await _context.SaveChangesAsync(cancellationToken);

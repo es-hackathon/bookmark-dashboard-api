@@ -1,14 +1,16 @@
 ﻿using AutoMapper;
 using Bookmark.Application.Common.Mapping;
 using Bookmark.Domain.Entities;
+using System;
 
 namespace Bookmark.Application.Features.GroupFeature.Commands.UpdateGroup
 {
     public class UpdateGroupViewModel : IMapFrom<Groups>
     {
-        public int Id { get; set; }
-        public string Code { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
+        public bool IsActive { get; set; }
 
         public void Mapping(Profile profile)
         {

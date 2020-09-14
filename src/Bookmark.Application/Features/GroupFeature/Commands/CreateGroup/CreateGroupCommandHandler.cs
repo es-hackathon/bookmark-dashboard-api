@@ -24,9 +24,7 @@ namespace Bookmark.Application.Features.GroupFeature.Commands.CreateGroup
                 Id = Guid.NewGuid(),
                 Name = request.Name,
                 Description = request.Description,
-                DisplayIcon = request.DisplayIcon,
-                Url = request.Url,
-                ExpireDate = request.ExpireDate
+                IsActive = request.IsActive
             };
 
             _context.Groups.Add(entity);
