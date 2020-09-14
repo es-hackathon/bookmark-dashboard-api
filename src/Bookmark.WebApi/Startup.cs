@@ -119,8 +119,6 @@ namespace Bookmark.WebApi
 
             log.AddSerilog();
 
-            log.AddSerilog();
-
             app.UseMiddleware<CustomExceptionHandlerMiddleware>();
 
             app.UseHttpsRedirection();
