@@ -40,7 +40,8 @@ namespace Bookmark.WebApi
 
             services.AddDbContext<ApplicationDbContext>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("BookmarkConn")
-          ));
+             ));
+            services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
 
             services.AddIdentityInfrastructure(Configuration);
@@ -93,8 +94,7 @@ namespace Bookmark.WebApi
                 setupAction.IncludeXmlComments(xmlCommentsFullPath);
             });
 
-            services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
-
+     
             services.AddApiVersioning(config =>
             {
                 config.DefaultApiVersion = new ApiVersion(1, 0);
@@ -102,7 +102,7 @@ namespace Bookmark.WebApi
                 config.ReportApiVersions = true;
             });
 
-
+            services.AddMemoryCache();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory log)
