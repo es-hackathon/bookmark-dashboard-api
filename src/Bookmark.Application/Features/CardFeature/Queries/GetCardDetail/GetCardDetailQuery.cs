@@ -1,9 +1,10 @@
 ﻿using MediatR;
+using System;
 
 namespace Bookmark.Application.Features.CardFeature.Queries.GetCardDetail
 {
     public class GetCardDetailQuery : IRequest<CardDetailViewModel>
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
     }
 }
