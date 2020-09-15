@@ -37,7 +37,7 @@ namespace Bookmark.Persistance.Seeds
                 },
                 new Groups
                 {
-                    Id = Constants.Group3,
+                    Id = Constants.Group4,
                     Name = "Microsoft extension",
                     Description = "Microsoft extension",
                     IsActive = true
