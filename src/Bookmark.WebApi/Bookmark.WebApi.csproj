@@ -28,11 +28,6 @@
     <ProjectReference Include="..\Bookmark.Infrastructure\Bookmark.Infrastructure.csproj" />
     <ProjectReference Include="..\Bookmark.Persistance\Bookmark.Persistance.csproj" />
   </ItemGroup>
-
-
-  <ItemGroup>
-    <Folder Include="Properties\PublishProfiles\" />
-  </ItemGroup>
   
   
 </Project>
