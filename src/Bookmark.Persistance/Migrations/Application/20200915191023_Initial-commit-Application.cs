@@ -67,28 +67,25 @@ namespace Bookmark.Persistance.Migrations.Application
                 name: "GroupShared",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    RowVersion = table.Column<byte[]>(rowVersion: true, nullable: true),
-                    CardsId = table.Column<Guid>(nullable: true),
-                    GroupsId = table.Column<Guid>(nullable: true),
+                    CardsId = table.Column<Guid>(nullable: false),
+                    GroupsId = table.Column<Guid>(nullable: false),
                     User = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_GroupShared", x => x.Id);
+                    table.PrimaryKey("PK_GroupShared", x => new { x.CardsId, x.GroupsId });
                     table.ForeignKey(
                         name: "FK_GroupShared_Cards_CardsId",
                         column: x => x.CardsId,
                         principalTable: "Cards",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_GroupShared_Groups_GroupsId",
                         column: x => x.GroupsId,
                         principalTable: "Groups",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -96,11 +93,11 @@ namespace Bookmark.Persistance.Migrations.Application
                 columns: new[] { "Id", "Created", "CreatedBy", "Description", "DisplayIcon", "ExpireDate", "LastModified", "LastModifiedBy", "Name", "Url" },
                 values: new object[,]
                 {
-                    { new Guid("30d5e915-5f2f-4fb0-be7c-1735b1863cda"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github Project Onion Architecture", "https://github.com/Amitpnk" },
-                    { new Guid("43915137-55a7-4c4c-bfd2-dfaf55d6b0a8"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github Project Clean Architecture", "https://github.com/Amitpnk" },
-                    { new Guid("76499266-4299-4590-90d7-929b56380f1a"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github account", "https://github.com/Amitpnk" },
-                    { new Guid("18c8a690-76a2-4c11-9f48-5b3b1a841d37"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github account", "https://github.com/Amitpnk" },
-                    { new Guid("dfc535ac-534c-4f52-bd30-95855022247c"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github account", "https://github.com/Amitpnk" }
+                    { new Guid("9cd60c95-6ee6-4a13-8549-c194841d4b21"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github Project Onion Architecture", "https://github.com/Amitpnk" },
+                    { new Guid("25e5c8fb-d6ea-46c4-9c1f-3f7473726825"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github Project Clean Architecture", "https://github.com/Amitpnk" },
+                    { new Guid("28e29545-2aeb-4e34-a5db-3ad5939c7257"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github account", "https://github.com/Amitpnk" },
+                    { new Guid("99109f67-9d1d-43a4-992f-ff4a34ceae68"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github account", "https://github.com/Amitpnk" },
+                    { new Guid("abd3542e-870f-4001-94f6-b1988ef34995"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github account", "https://github.com/Amitpnk" }
                 });
 
             migrationBuilder.InsertData(
@@ -108,20 +105,25 @@ namespace Bookmark.Persistance.Migrations.Application
                 columns: new[] { "Id", "Description", "IsActive", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("286b9890-8fc8-4fc7-bc11-7dec3387460c"), "Github account", true, "Github account" },
-                    { new Guid("74069bff-4d1c-488e-bab6-b255c7af8581"), "c-sharp corner", true, "c-sharp corner" },
-                    { new Guid("182b52ef-22e3-4440-993f-07cf75da41ac"), "Code project", true, "Code project" },
-                    { new Guid("d6c3b553-cea4-4cc8-985d-814a7cb491a8"), "Microsoft extension", true, "Microsoft extension" }
+                    { new Guid("7b3500ba-234a-49b5-a363-398023b37457"), "Github account", true, "Github account" },
+                    { new Guid("a0285e2b-1c68-499f-affe-61fb357e4dc4"), "c-sharp corner", true, "c-sharp corner" },
+                    { new Guid("9a1d4ac4-e22a-4f32-960f-470715c228fb"), "Code project", true, "Code project" },
+                    { new Guid("d53dbc44-fdc3-4c1f-9657-1d8ff9c06bca"), "Microsoft extension", true, "Microsoft extension" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "GroupShared",
+                columns: new[] { "CardsId", "GroupsId", "User" },
+                values: new object[] { new Guid("9cd60c95-6ee6-4a13-8549-c194841d4b21"), new Guid("7b3500ba-234a-49b5-a363-398023b37457"), "1ecc6f29-9c64-446f-bce9-4f64e80e3789" });
+
+            migrationBuilder.InsertData(
+                table: "GroupShared",
+                columns: new[] { "CardsId", "GroupsId", "User" },
+                values: new object[] { new Guid("25e5c8fb-d6ea-46c4-9c1f-3f7473726825"), new Guid("a0285e2b-1c68-499f-affe-61fb357e4dc4"), "1ecc6f29-9c64-446f-bce9-4f64e80e3789" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_CardFavorite_CardsId",
                 table: "CardFavorite",
-                column: "CardsId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_GroupShared_CardsId",
-                table: "GroupShared",
                 column: "CardsId");
 
             migrationBuilder.CreateIndex(

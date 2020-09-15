@@ -93,9 +93,9 @@ namespace Bookmark.Infrastructure.Migrations.Identity
                     b.HasData(
                         new
                         {
-                            Id = "02c54b50-c75d-4e34-b32c-29584708fac8",
+                            Id = "78995423-a646-445b-b65d-2aeb6485882e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7c4a8670-94b1-4007-838f-e14b01f9f8ca",
+                            ConcurrencyStamp = "94476161-bbb2-4443-8535-2a7836befc70",
                             Email = "superadmin@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Amit",
@@ -105,15 +105,15 @@ namespace Bookmark.Infrastructure.Migrations.Identity
                             NormalizedUserName = "SUPERADMIN",
                             PasswordHash = "Password@123",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "d54ef0f8-060e-49fc-863d-2ce2d8925c8a",
+                            SecurityStamp = "c7646931-9487-4bff-9e1e-4aa67a78f725",
                             TwoFactorEnabled = false,
                             UserName = "superadmin"
                         },
                         new
                         {
-                            Id = "9b94afe1-23e3-4b6a-b323-d73b7f4b27b2",
+                            Id = "1ecc6f29-9c64-446f-bce9-4f64e80e3789",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d156ab55-7ffc-4a19-b193-b8be7e75d76a",
+                            ConcurrencyStamp = "1cb9ceb7-afec-4e7a-8cfa-8e24348076b2",
                             Email = "basicuser@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Basic",
@@ -123,7 +123,7 @@ namespace Bookmark.Infrastructure.Migrations.Identity
                             NormalizedUserName = "BASICUSER",
                             PasswordHash = "Password@123",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "f9ebb79b-9f06-4354-b51c-4d2e8e56046b",
+                            SecurityStamp = "7e496601-841e-4ba0-b6c5-38dacc1e857b",
                             TwoFactorEnabled = false,
                             UserName = "basicuser"
                         });
@@ -196,29 +196,29 @@ namespace Bookmark.Infrastructure.Migrations.Identity
                     b.HasData(
                         new
                         {
-                            Id = "a0c26399-fc74-4a9a-9001-4f0f4a4a8d0f",
-                            ConcurrencyStamp = "75e1908c-b15c-40b2-80d9-dd1bc7a0e554",
+                            Id = "a1735783-6aa6-4dfb-a548-87bffaa93e18",
+                            ConcurrencyStamp = "28214b4e-dfca-4984-ac2c-38d62641526f",
                             Name = "SuperAdmin",
                             NormalizedName = "SuperAdmin"
                         },
                         new
                         {
-                            Id = "49f4db5c-7bb9-49c9-801e-cca14e384c4c",
-                            ConcurrencyStamp = "f7bf7f8b-ed3b-460b-8223-a82b96ed6973",
+                            Id = "33918386-7102-4959-8886-bab8189d2f05",
+                            ConcurrencyStamp = "619a6b2f-21fb-406e-8ac9-bc86038f87cb",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "b0082bd2-f88d-434e-81e6-77f43f7d1808",
-                            ConcurrencyStamp = "94e9490e-d8d8-4829-a9ff-b3a9f561d0fe",
+                            Id = "87d66d9d-ad62-4a3c-9764-444d980bb432",
+                            ConcurrencyStamp = "46cb9472-3ce3-4e8b-8282-df4352813a9b",
                             Name = "Moderator",
                             NormalizedName = "Moderator"
                         },
                         new
                         {
-                            Id = "37aaa947-104d-487a-a1d1-ed50e54f0c18",
-                            ConcurrencyStamp = "45dc0e4c-bee4-4372-a4e8-6eef8136b741",
+                            Id = "4cc1829d-916b-4089-b83e-90e819997928",
+                            ConcurrencyStamp = "97a52921-ea19-4cb5-bdfa-51a42beed191",
                             Name = "Basic",
                             NormalizedName = "Basic"
                         });
@@ -311,28 +311,28 @@ namespace Bookmark.Infrastructure.Migrations.Identity
                     b.HasData(
                         new
                         {
-                            UserId = "9b94afe1-23e3-4b6a-b323-d73b7f4b27b2",
-                            RoleId = "37aaa947-104d-487a-a1d1-ed50e54f0c18"
+                            UserId = "1ecc6f29-9c64-446f-bce9-4f64e80e3789",
+                            RoleId = "4cc1829d-916b-4089-b83e-90e819997928"
                         },
                         new
                         {
-                            UserId = "02c54b50-c75d-4e34-b32c-29584708fac8",
-                            RoleId = "a0c26399-fc74-4a9a-9001-4f0f4a4a8d0f"
+                            UserId = "78995423-a646-445b-b65d-2aeb6485882e",
+                            RoleId = "a1735783-6aa6-4dfb-a548-87bffaa93e18"
                         },
                         new
                         {
-                            UserId = "02c54b50-c75d-4e34-b32c-29584708fac8",
-                            RoleId = "49f4db5c-7bb9-49c9-801e-cca14e384c4c"
+                            UserId = "78995423-a646-445b-b65d-2aeb6485882e",
+                            RoleId = "33918386-7102-4959-8886-bab8189d2f05"
                         },
                         new
                         {
-                            UserId = "02c54b50-c75d-4e34-b32c-29584708fac8",
-                            RoleId = "b0082bd2-f88d-434e-81e6-77f43f7d1808"
+                            UserId = "78995423-a646-445b-b65d-2aeb6485882e",
+                            RoleId = "87d66d9d-ad62-4a3c-9764-444d980bb432"
                         },
                         new
                         {
-                            UserId = "02c54b50-c75d-4e34-b32c-29584708fac8",
-                            RoleId = "37aaa947-104d-487a-a1d1-ed50e54f0c18"
+                            UserId = "78995423-a646-445b-b65d-2aeb6485882e",
+                            RoleId = "4cc1829d-916b-4089-b83e-90e819997928"
                         });
                 });
 
