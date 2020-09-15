@@ -1,5 +1,6 @@
 ﻿using Bookmark.Application.Common.Interface;
 using Bookmark.Domain.Entities;
+using Bookmark.Persistance.Seeds;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ namespace Bookmark.Persistance
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder
-                .UseSqlServer("DataSource=app.db");
+                .UseInMemoryDatabase("DataSource=app.db");
             }
         }
 
@@ -36,6 +37,8 @@ namespace Bookmark.Persistance
         {
             //Fluent API configurations 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+
+            modelBuilder.Seed();
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
