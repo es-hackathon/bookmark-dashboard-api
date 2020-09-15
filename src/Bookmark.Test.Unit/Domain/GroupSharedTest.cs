@@ -1,12 +1,13 @@
 ﻿using Bookmark.Domain.Entities;
 using NUnit.Framework;
+using System;
 
 namespace Bookmark.Test.Unit.Domain
 {
     public class GroupSharedTest
     {
         private readonly GroupShared _groupShared;
-        private readonly int Id = 1;
+        private readonly Guid GroupId = Guid.NewGuid();
 
         public GroupSharedTest()
         {
@@ -14,10 +15,10 @@ namespace Bookmark.Test.Unit.Domain
         }
 
         [Test]
-        public void TestSetAndGetId()
+        public void TestSetAndGetGroupsId()
         {
-            _groupShared.Id = Id;
-            Assert.That(_groupShared.Id, Is.EqualTo(Id));
+            _groupShared.GroupsId = GroupId;
+            Assert.That(_groupShared.GroupsId, Is.EqualTo(GroupId));
         }
 
     }
