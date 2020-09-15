@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bookmark.Persistance.Migrations.Application
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200915140753_Initial-commit-Application")]
+    [Migration("20200915161810_Initial-commit-Application")]
     partial class InitialcommitApplication
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -86,7 +86,7 @@ namespace Bookmark.Persistance.Migrations.Application
                     b.HasData(
                         new
                         {
-                            Id = new Guid("acf5ad7b-5641-41d8-a832-aa31dae1f078"),
+                            Id = new Guid("30d5e915-5f2f-4fb0-be7c-1735b1863cda"),
                             Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Github account",
                             DisplayIcon = "Bookmark",
@@ -95,7 +95,7 @@ namespace Bookmark.Persistance.Migrations.Application
                         },
                         new
                         {
-                            Id = new Guid("0bee4cae-fdc7-43ba-aa15-687c4c0588fe"),
+                            Id = new Guid("43915137-55a7-4c4c-bfd2-dfaf55d6b0a8"),
                             Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Github account",
                             DisplayIcon = "Bookmark",
@@ -104,7 +104,7 @@ namespace Bookmark.Persistance.Migrations.Application
                         },
                         new
                         {
-                            Id = new Guid("f2e60eac-de02-4d91-8b99-f85768b1f1ec"),
+                            Id = new Guid("76499266-4299-4590-90d7-929b56380f1a"),
                             Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Github account",
                             DisplayIcon = "Bookmark",
@@ -113,7 +113,7 @@ namespace Bookmark.Persistance.Migrations.Application
                         },
                         new
                         {
-                            Id = new Guid("5a2508d8-6f0a-485e-8c4f-604d915d467f"),
+                            Id = new Guid("18c8a690-76a2-4c11-9f48-5b3b1a841d37"),
                             Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Github account",
                             DisplayIcon = "Bookmark",
@@ -122,7 +122,7 @@ namespace Bookmark.Persistance.Migrations.Application
                         },
                         new
                         {
-                            Id = new Guid("c65b47ac-3ce7-4cbf-b398-946e681f2470"),
+                            Id = new Guid("dfc535ac-534c-4f52-bd30-95855022247c"),
                             Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Github account",
                             DisplayIcon = "Bookmark",
@@ -148,6 +148,9 @@ namespace Bookmark.Persistance.Migrations.Application
                         .IsConcurrencyToken()
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("rowversion");
+
+                    b.Property<string>("User")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -181,6 +184,36 @@ namespace Bookmark.Persistance.Migrations.Application
                     b.HasKey("Id");
 
                     b.ToTable("Groups");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("286b9890-8fc8-4fc7-bc11-7dec3387460c"),
+                            Description = "Github account",
+                            IsActive = true,
+                            Name = "Github account"
+                        },
+                        new
+                        {
+                            Id = new Guid("74069bff-4d1c-488e-bab6-b255c7af8581"),
+                            Description = "c-sharp corner",
+                            IsActive = true,
+                            Name = "c-sharp corner"
+                        },
+                        new
+                        {
+                            Id = new Guid("182b52ef-22e3-4440-993f-07cf75da41ac"),
+                            Description = "Code project",
+                            IsActive = true,
+                            Name = "Code project"
+                        },
+                        new
+                        {
+                            Id = new Guid("d6c3b553-cea4-4cc8-985d-814a7cb491a8"),
+                            Description = "Microsoft extension",
+                            IsActive = true,
+                            Name = "Microsoft extension"
+                        });
                 });
 
             modelBuilder.Entity("Bookmark.Domain.Entities.CardFavorite", b =>

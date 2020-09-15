@@ -71,7 +71,8 @@ namespace Bookmark.Persistance.Migrations.Application
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RowVersion = table.Column<byte[]>(rowVersion: true, nullable: true),
                     CardsId = table.Column<Guid>(nullable: true),
-                    GroupsId = table.Column<Guid>(nullable: true)
+                    GroupsId = table.Column<Guid>(nullable: true),
+                    User = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -95,11 +96,22 @@ namespace Bookmark.Persistance.Migrations.Application
                 columns: new[] { "Id", "Created", "CreatedBy", "Description", "DisplayIcon", "ExpireDate", "LastModified", "LastModifiedBy", "Name", "Url" },
                 values: new object[,]
                 {
-                    { new Guid("acf5ad7b-5641-41d8-a832-aa31dae1f078"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github Project Onion Architecture", "https://github.com/Amitpnk" },
-                    { new Guid("0bee4cae-fdc7-43ba-aa15-687c4c0588fe"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github Project Clean Architecture", "https://github.com/Amitpnk" },
-                    { new Guid("f2e60eac-de02-4d91-8b99-f85768b1f1ec"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github account", "https://github.com/Amitpnk" },
-                    { new Guid("5a2508d8-6f0a-485e-8c4f-604d915d467f"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github account", "https://github.com/Amitpnk" },
-                    { new Guid("c65b47ac-3ce7-4cbf-b398-946e681f2470"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github account", "https://github.com/Amitpnk" }
+                    { new Guid("30d5e915-5f2f-4fb0-be7c-1735b1863cda"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github Project Onion Architecture", "https://github.com/Amitpnk" },
+                    { new Guid("43915137-55a7-4c4c-bfd2-dfaf55d6b0a8"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github Project Clean Architecture", "https://github.com/Amitpnk" },
+                    { new Guid("76499266-4299-4590-90d7-929b56380f1a"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github account", "https://github.com/Amitpnk" },
+                    { new Guid("18c8a690-76a2-4c11-9f48-5b3b1a841d37"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github account", "https://github.com/Amitpnk" },
+                    { new Guid("dfc535ac-534c-4f52-bd30-95855022247c"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github account", "https://github.com/Amitpnk" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Groups",
+                columns: new[] { "Id", "Description", "IsActive", "Name" },
+                values: new object[,]
+                {
+                    { new Guid("286b9890-8fc8-4fc7-bc11-7dec3387460c"), "Github account", true, "Github account" },
+                    { new Guid("74069bff-4d1c-488e-bab6-b255c7af8581"), "c-sharp corner", true, "c-sharp corner" },
+                    { new Guid("182b52ef-22e3-4440-993f-07cf75da41ac"), "Code project", true, "Code project" },
+                    { new Guid("d6c3b553-cea4-4cc8-985d-814a7cb491a8"), "Microsoft extension", true, "Microsoft extension" }
                 });
 
             migrationBuilder.CreateIndex(
