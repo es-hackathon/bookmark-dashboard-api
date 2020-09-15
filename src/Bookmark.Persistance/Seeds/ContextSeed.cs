@@ -14,9 +14,9 @@ namespace Bookmark.Persistance.Seeds
         {
             CreateCards(modelBuilder);
 
-            //CreateGroups(modelBuilder);
+            CreateGroups(modelBuilder);
 
-            //MapGroupCard(modelBuilder);
+            MapGroupCard(modelBuilder);
         }
 
         private static void CreateCards(ModelBuilder modelBuilder)
@@ -31,10 +31,10 @@ namespace Bookmark.Persistance.Seeds
             modelBuilder.Entity<Groups>().HasData(groups);
         }
 
-        //private static void MapGroupCard(ModelBuilder modelBuilder)
-        //{
-        //    var identityUserRoles = MappingUserRole.IdentityUserRoleList();
-        //    modelBuilder.Entity<IdentityUserRole<string>>().HasData(identityUserRoles);
-        //}
+        private static void MapGroupCard(ModelBuilder modelBuilder)
+        {
+            var  GroupCardUser = MappingGroupCard.GroupCarduserMappingList();
+            modelBuilder.Entity<GroupShared>().HasData(GroupCardUser);
+        }
     }
 }

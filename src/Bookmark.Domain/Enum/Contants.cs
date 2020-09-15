@@ -13,8 +13,8 @@ namespace Bookmark.Domain.Enum
         public static readonly string Moderator = Guid.NewGuid().ToString();
         public static readonly string Basic = Guid.NewGuid().ToString();
 
-        public static readonly string SuperAdminUser = Guid.NewGuid().ToString();
-        public static readonly string BasicUser = Guid.NewGuid().ToString();
+        public static readonly string SuperAdminUser = "78995423-a646-445b-b65d-2aeb6485882e";
+        public static readonly string BasicUser = "1ecc6f29-9c64-446f-bce9-4f64e80e3789";
 
 
         public static readonly Guid Card1 = Guid.NewGuid();
@@ -30,7 +30,6 @@ namespace Bookmark.Domain.Enum
         public static readonly Guid Group2 = Guid.NewGuid();
         public static readonly Guid Group3 = Guid.NewGuid();
         public static readonly Guid Group4 = Guid.NewGuid();
-
 
     }
 }
