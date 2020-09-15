@@ -80,6 +80,53 @@ namespace Bookmark.Persistance.Migrations.Application
                     b.HasKey("Id");
 
                     b.ToTable("Cards");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("acf5ad7b-5641-41d8-a832-aa31dae1f078"),
+                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Github account",
+                            DisplayIcon = "Bookmark",
+                            Name = "Github Project Onion Architecture",
+                            Url = "https://github.com/Amitpnk"
+                        },
+                        new
+                        {
+                            Id = new Guid("0bee4cae-fdc7-43ba-aa15-687c4c0588fe"),
+                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Github account",
+                            DisplayIcon = "Bookmark",
+                            Name = "Github Project Clean Architecture",
+                            Url = "https://github.com/Amitpnk"
+                        },
+                        new
+                        {
+                            Id = new Guid("f2e60eac-de02-4d91-8b99-f85768b1f1ec"),
+                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Github account",
+                            DisplayIcon = "Bookmark",
+                            Name = "Github account",
+                            Url = "https://github.com/Amitpnk"
+                        },
+                        new
+                        {
+                            Id = new Guid("5a2508d8-6f0a-485e-8c4f-604d915d467f"),
+                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Github account",
+                            DisplayIcon = "Bookmark",
+                            Name = "Github account",
+                            Url = "https://github.com/Amitpnk"
+                        },
+                        new
+                        {
+                            Id = new Guid("c65b47ac-3ce7-4cbf-b398-946e681f2470"),
+                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Github account",
+                            DisplayIcon = "Bookmark",
+                            Name = "Github account",
+                            Url = "https://github.com/Amitpnk"
+                        });
                 });
 
             modelBuilder.Entity("Bookmark.Domain.Entities.GroupShared", b =>

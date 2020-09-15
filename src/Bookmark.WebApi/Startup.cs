@@ -38,9 +38,17 @@ namespace Bookmark.WebApi
 
             services.AddApplication();
 
-            services.AddDbContext<ApplicationDbContext>(opt =>
-                opt.UseSqlServer(Configuration.GetConnectionString("BookmarkConn")
-             ));
+            if (Configuration.GetValue<bool>("UseInMemoryDatabase"))
+            {
+                services.AddDbContext<ApplicationDbContext>(options =>
+                    options.UseInMemoryDatabase("BookmarkConnInMemoryDb"));
+            }
+            else
+            {
+                services.AddDbContext<ApplicationDbContext>(opt =>
+                    opt.UseSqlServer(Configuration.GetConnectionString("BookmarkConn")
+                 ));
+            }
             services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
 

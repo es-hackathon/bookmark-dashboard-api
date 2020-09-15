@@ -90,6 +90,18 @@ namespace Bookmark.Persistance.Migrations.Application
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Cards",
+                columns: new[] { "Id", "Created", "CreatedBy", "Description", "DisplayIcon", "ExpireDate", "LastModified", "LastModifiedBy", "Name", "Url" },
+                values: new object[,]
+                {
+                    { new Guid("acf5ad7b-5641-41d8-a832-aa31dae1f078"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github Project Onion Architecture", "https://github.com/Amitpnk" },
+                    { new Guid("0bee4cae-fdc7-43ba-aa15-687c4c0588fe"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github Project Clean Architecture", "https://github.com/Amitpnk" },
+                    { new Guid("f2e60eac-de02-4d91-8b99-f85768b1f1ec"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github account", "https://github.com/Amitpnk" },
+                    { new Guid("5a2508d8-6f0a-485e-8c4f-604d915d467f"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github account", "https://github.com/Amitpnk" },
+                    { new Guid("c65b47ac-3ce7-4cbf-b398-946e681f2470"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Github account", "Bookmark", null, null, null, "Github account", "https://github.com/Amitpnk" }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_CardFavorite_CardsId",
                 table: "CardFavorite",
