@@ -46,8 +46,10 @@ namespace Bookmark.WebApi
             else
             {
                 services.AddDbContext<ApplicationDbContext>(opt =>
-                    opt.UseSqlServer(Configuration.GetConnectionString("BookmarkConn")
-                 ));
+                {
+                    opt.EnableSensitiveDataLogging(false);
+                    opt.UseSqlServer(Configuration.GetConnectionString("BookmarkConn"));
+                 });
             }
             services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
