@@ -1,10 +1,6 @@
 ﻿using Bookmark.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bookmark.Persistance.Seeds
 {
@@ -21,7 +17,7 @@ namespace Bookmark.Persistance.Seeds
 
         private static void CreateCards(ModelBuilder modelBuilder)
         {
-            List<Cards> cards= DefaultCards.CardList();
+            List<Cards> cards = DefaultCards.CardList();
             modelBuilder.Entity<Cards>().HasData(cards);
         }
 
@@ -33,7 +29,7 @@ namespace Bookmark.Persistance.Seeds
 
         private static void MapGroupCard(ModelBuilder modelBuilder)
         {
-            var  GroupCardUser = MappingGroupCard.GroupCarduserMappingList();
+            var GroupCardUser = MappingGroupCard.GroupCarduserMappingList();
             modelBuilder.Entity<GroupShared>().HasData(GroupCardUser);
         }
     }

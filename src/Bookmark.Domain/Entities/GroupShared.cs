@@ -1,9 +1,8 @@
-﻿using Bookmark.Domain.Common;
-using System;
+﻿using System;
 
 namespace Bookmark.Domain.Entities
 {
-    public class GroupShared 
+    public class GroupShared
     {
         public Guid CardsId { get; set; }
         public Guid GroupsId { get; set; }

@@ -49,7 +49,7 @@ namespace Bookmark.WebApi
                 {
                     opt.EnableSensitiveDataLogging(false);
                     opt.UseSqlServer(Configuration.GetConnectionString("BookmarkConn"));
-                 });
+                });
             }
             services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
