@@ -100,7 +100,8 @@ namespace Bookmark.WebApi
                         },
                     });
                 var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentsFile);
+                var xmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory,//+ "wwwroot",
+                    xmlCommentsFile);
                 setupAction.IncludeXmlComments(xmlCommentsFullPath);
             });
 
@@ -132,6 +133,8 @@ namespace Bookmark.WebApi
             app.UseMiddleware<CustomExceptionHandlerMiddleware>();
 
             app.UseHttpsRedirection();
+
+            app.UseStaticFiles();
 
             app.UseRouting();
 
