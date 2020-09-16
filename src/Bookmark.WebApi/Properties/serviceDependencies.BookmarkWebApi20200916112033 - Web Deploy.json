@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroup')]/providers/Microsoft.Sql/servers/bookmarkwebapidbserver/databases/Bookmark.WebApi_db",
+      "type": "mssql.azure",
+      "connectionId": "BookmarkConn",
+      "secretStore": "AzureAppSettings"
+    },
+    "mssql2": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroup')]/providers/Microsoft.Sql/servers/bookmarkwebapidbserver/databases/Bookmark.WebApi_db",
+      "type": "mssql.azure",
+      "connectionId": "IdentityConnection",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}
