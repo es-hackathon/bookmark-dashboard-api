@@ -1,10 +1,6 @@
 ﻿using Bookmark.Domain.Entities;
 using Bookmark.Domain.Enum;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bookmark.Persistance.Seeds
 {
@@ -37,7 +33,7 @@ namespace Bookmark.Persistance.Seeds
                 },
                 new Groups
                 {
-                    Id = Constants.Group3,
+                    Id = Constants.Group4,
                     Name = "Microsoft extension",
                     Description = "Microsoft extension",
                     IsActive = true

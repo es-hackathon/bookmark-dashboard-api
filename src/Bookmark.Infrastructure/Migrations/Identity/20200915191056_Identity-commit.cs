@@ -204,10 +204,10 @@ namespace Bookmark.Infrastructure.Migrations.Identity
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "a0c26399-fc74-4a9a-9001-4f0f4a4a8d0f", "75e1908c-b15c-40b2-80d9-dd1bc7a0e554", "SuperAdmin", "SuperAdmin" },
-                    { "49f4db5c-7bb9-49c9-801e-cca14e384c4c", "f7bf7f8b-ed3b-460b-8223-a82b96ed6973", "Admin", "Admin" },
-                    { "b0082bd2-f88d-434e-81e6-77f43f7d1808", "94e9490e-d8d8-4829-a9ff-b3a9f561d0fe", "Moderator", "Moderator" },
-                    { "37aaa947-104d-487a-a1d1-ed50e54f0c18", "45dc0e4c-bee4-4372-a4e8-6eef8136b741", "Basic", "Basic" }
+                    { "a1735783-6aa6-4dfb-a548-87bffaa93e18", "28214b4e-dfca-4984-ac2c-38d62641526f", "SuperAdmin", "SuperAdmin" },
+                    { "33918386-7102-4959-8886-bab8189d2f05", "619a6b2f-21fb-406e-8ac9-bc86038f87cb", "Admin", "Admin" },
+                    { "87d66d9d-ad62-4a3c-9764-444d980bb432", "46cb9472-3ce3-4e8b-8282-df4352813a9b", "Moderator", "Moderator" },
+                    { "4cc1829d-916b-4089-b83e-90e819997928", "97a52921-ea19-4cb5-bdfa-51a42beed191", "Basic", "Basic" }
                 });
 
             migrationBuilder.InsertData(
@@ -216,8 +216,8 @@ namespace Bookmark.Infrastructure.Migrations.Identity
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "02c54b50-c75d-4e34-b32c-29584708fac8", 0, "7c4a8670-94b1-4007-838f-e14b01f9f8ca", "superadmin@gmail.com", true, "Amit", "Naik", false, null, "SUPERADMIN@GMAIL.COM", "SUPERADMIN", "Password@123", null, true, "d54ef0f8-060e-49fc-863d-2ce2d8925c8a", false, "superadmin" },
-                    { "9b94afe1-23e3-4b6a-b323-d73b7f4b27b2", 0, "d156ab55-7ffc-4a19-b193-b8be7e75d76a", "basicuser@gmail.com", true, "Basic", "User", false, null, "BASICUSER@GMAIL.COM", "BASICUSER", "Password@123", null, true, "f9ebb79b-9f06-4354-b51c-4d2e8e56046b", false, "basicuser" }
+                    { "78995423-a646-445b-b65d-2aeb6485882e", 0, "94476161-bbb2-4443-8535-2a7836befc70", "superadmin@gmail.com", true, "Amit", "Naik", false, null, "SUPERADMIN@GMAIL.COM", "SUPERADMIN", "Password@123", null, true, "c7646931-9487-4bff-9e1e-4aa67a78f725", false, "superadmin" },
+                    { "1ecc6f29-9c64-446f-bce9-4f64e80e3789", 0, "1cb9ceb7-afec-4e7a-8cfa-8e24348076b2", "basicuser@gmail.com", true, "Basic", "User", false, null, "BASICUSER@GMAIL.COM", "BASICUSER", "Password@123", null, true, "7e496601-841e-4ba0-b6c5-38dacc1e857b", false, "basicuser" }
                 });
 
             migrationBuilder.InsertData(
@@ -226,11 +226,11 @@ namespace Bookmark.Infrastructure.Migrations.Identity
                 columns: new[] { "UserId", "RoleId" },
                 values: new object[,]
                 {
-                    { "02c54b50-c75d-4e34-b32c-29584708fac8", "a0c26399-fc74-4a9a-9001-4f0f4a4a8d0f" },
-                    { "02c54b50-c75d-4e34-b32c-29584708fac8", "49f4db5c-7bb9-49c9-801e-cca14e384c4c" },
-                    { "02c54b50-c75d-4e34-b32c-29584708fac8", "b0082bd2-f88d-434e-81e6-77f43f7d1808" },
-                    { "9b94afe1-23e3-4b6a-b323-d73b7f4b27b2", "37aaa947-104d-487a-a1d1-ed50e54f0c18" },
-                    { "02c54b50-c75d-4e34-b32c-29584708fac8", "37aaa947-104d-487a-a1d1-ed50e54f0c18" }
+                    { "78995423-a646-445b-b65d-2aeb6485882e", "a1735783-6aa6-4dfb-a548-87bffaa93e18" },
+                    { "78995423-a646-445b-b65d-2aeb6485882e", "33918386-7102-4959-8886-bab8189d2f05" },
+                    { "78995423-a646-445b-b65d-2aeb6485882e", "87d66d9d-ad62-4a3c-9764-444d980bb432" },
+                    { "1ecc6f29-9c64-446f-bce9-4f64e80e3789", "4cc1829d-916b-4089-b83e-90e819997928" },
+                    { "78995423-a646-445b-b65d-2aeb6485882e", "4cc1829d-916b-4089-b83e-90e819997928" }
                 });
 
             migrationBuilder.CreateIndex(

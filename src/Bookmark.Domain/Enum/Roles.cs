@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Bookmark.Domain.Enum
+﻿namespace Bookmark.Domain.Enum
 {
     public enum Roles
     {

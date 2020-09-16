@@ -35,6 +35,7 @@ namespace Bookmark.Persistance
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<GroupShared>().HasKey(g => new { g.CardsId, g.GroupsId });
             //Fluent API configurations 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
 
