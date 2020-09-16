@@ -8,7 +8,7 @@ namespace Bookmark.Persistance.Seeds
     {
         public static List<GroupShared> GroupCarduserMappingList()
         {
-            return new List<GroupShared>()
+            return new List<GroupShared>
             {
                 new GroupShared
                 {
