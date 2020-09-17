@@ -29,7 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{715B5B24-4
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookmark.Test.Integration", "src\Bookmark.Test.Integration\Bookmark.Test.Integration.csproj", "{75B93180-0BB7-4B70-9F7A-CFB52E2FA11A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookmark.Web", "Bookmark.Web\Bookmark.Web.csproj", "{F8C16525-637D-4C22-82C9-2640C8CF0158}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookmark.Web", "src\Bookmark.Web\Bookmark.Web.csproj", "{F8C16525-637D-4C22-82C9-2640C8CF0158}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
