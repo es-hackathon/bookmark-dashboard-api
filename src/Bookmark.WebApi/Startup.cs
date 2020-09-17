@@ -100,8 +100,9 @@ namespace Bookmark.WebApi
                         },
                     });
                 var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory,//+ "wwwroot",
-                    xmlCommentsFile);
+                var xmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory
+                    //+ "wwwroot"
+                    , xmlCommentsFile);
                 setupAction.IncludeXmlComments(xmlCommentsFullPath);
             });
 
@@ -124,7 +125,7 @@ namespace Bookmark.WebApi
             }
 
             app.UseCors(options =>
-                    options.WithOrigins("http://localhost:3000")
+                    options.AllowAnyOrigin()
                    .AllowAnyHeader()
                    .AllowAnyMethod());
 
