@@ -4,6 +4,7 @@ using Bookmark.Application.Common.Interface;
 using Bookmark.Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -35,6 +36,7 @@ namespace Bookmark.Application.Features.CardFeature.Commands.UpdateCard
             entity.Url = request.Url;
             entity.DisplayIcon = request.DisplayIcon;
             entity.ExpireDate = request.ExpireDate;
+            entity.LastModified = DateTime.Now;
 
             _context.Cards.Update(entity);
             await _context.SaveChangesAsync(cancellationToken);

@@ -26,7 +26,8 @@ namespace Bookmark.Application.Features.CardFeature.Commands.CreateCard
                 Description = request.Description,
                 DisplayIcon = request.DisplayIcon,
                 Url = request.Url,
-                ExpireDate = request.ExpireDate
+                ExpireDate = request.ExpireDate,
+                Created = DateTime.Now
             };
 
             _context.Cards.Add(entity);
