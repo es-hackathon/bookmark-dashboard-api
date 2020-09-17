@@ -48,7 +48,6 @@ Web API solution template which is built on Clean Architecture using .Net Core f
 
 # Layer Dependencies
 
-
 ![layer dependencies](./docs/layer-dependencies.png)
 
 <details>
@@ -90,4 +89,8 @@ Web API solution template which is built on Clean Architecture using .Net Core f
     This can be WebApi or UI.
   </p>
 </details>
+
+## Layer examples
+
+![layer examples](./docs/layer-examples.png)
 
