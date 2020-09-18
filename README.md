@@ -32,19 +32,18 @@
 # Table of Contents
 
 * [About the Project](#about-the-project)
+* [Layer Dependencies](#Layer-Dependencies)
+* [Layer examples](#Layer-examples)
 * [Features available in this project](#Features-available-in-this-project)
 * [Solution Structure](Solution-Structure)
 * [How to Run](#How-to-Run)
-* [Project description](#project-description)
-* [Design patterns Used](#roadmap)
+* [Run or Debug the Solution](#Run-or-Debug-the-Solution)
 * [Licence Used](#Licence-Used)
 
 
 # About the Project
 
 Web API solution template which is built on Clean Architecture using .Net Core for bookmark dashboard project!
-
-
 
 # Layer Dependencies
 
