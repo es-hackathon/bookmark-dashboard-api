@@ -141,4 +141,4 @@ This can be WebApi or UI.
 
 - Web API Page: https://localhost:44396/OpenAPI/index.html
 
-  ![alt text](/docs/web-api.png)
+  ![alt text](/docs/webapi.png)
