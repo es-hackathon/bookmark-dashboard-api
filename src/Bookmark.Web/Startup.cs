@@ -38,8 +38,7 @@ namespace Bookmark.Web
 
             services.AddHealthChecksUI(setupSettings: setup =>
             {
-                //setup.AddHealthCheckEndpoint("Basic Health Check", $"https://localhost:44329/healthz");
-                setup.AddHealthCheckEndpoint("Basic Health Check", $"https://bookmarkweb20200916110752.azurewebsites.net/healthz");
+                setup.AddHealthCheckEndpoint("Basic Health Check", $"/healthz");
             });
         }
 
@@ -52,13 +51,12 @@ namespace Bookmark.Web
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseHealthChecks("https://bookmarkweb20200916110752.azurewebsites.net/healthz", new HealthCheckOptions
+            app.UseHealthChecks("/healthz", new HealthCheckOptions
             {
                 Predicate = _ => true,
                 ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse,
@@ -72,7 +70,6 @@ namespace Bookmark.Web
             {
                 setup.ApiPath = "/healthcheck";
                 setup.UIPath = "/healthcheck-ui";
-                setup.AddCustomStylesheet("./Customization/custom.css");
             });
 
 
