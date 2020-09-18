@@ -35,7 +35,7 @@
 * [Layer Dependencies](#Layer-Dependencies)
 * [Layer examples](#Layer-examples)
 * [Features available in this project](#Features-available-in-this-project)
-* [Solution Structure](Solution-Structure)
+* [Solution Structure](#Solution-Structure)
 * [How to Run](#How-to-Run)
 * [Run or Debug the Solution](#Run-or-Debug-the-Solution)
 * [Licence Used](#Licence-Used)
@@ -90,10 +90,10 @@ This can be WebApi or UI.
 ![layer examples](./docs/solution-explorer.png)
 
 
-# How to Run
-## Update Configuration
+## How to Run
+### Update Configuration
 
-### Database 
+#### Database 
   
 - Update Connection Strings:
 
@@ -137,7 +137,15 @@ This can be WebApi or UI.
 
 - Navigate to Health Checks UI https://localhost:44329/healthchecks-ui#/healthchecks and make sure everything is green.
 
+  ![alt text](/docs/healthcheck.png)
 
 - Web API Page: https://localhost:44396/OpenAPI/index.html
 
   ![alt text](/docs/webapi.png)
+
+## Application URLs:
+| Project  | Launch URL |  Server URL |
+| -------- | ---------- |  ---------- |  
+| API | https://localhost:44396/OpenAPI/index.html | https://bookmarkwebapi20200916112033.azurewebsites.net/OpenAPI/index.html | 
+| Health check | https://localhost:44329/healthchecks-ui#/healthchecks | https://bookmarkweb20200916110752.azurewebsites.net/healthchecks-ui#/healthchecks  |
+| React UI | http://localhost:3000 | https://bookmark-dashboard.web.app/ |
