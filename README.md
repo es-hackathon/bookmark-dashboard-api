@@ -38,6 +38,7 @@
 * [Solution Structure](#Solution-Structure)
 * [How to Run](#How-to-Run)
 * [Run or Debug the Solution](#Run-or-Debug-the-Solution)
+* [Application URLs](#Application-URLs)
 * [Licence Used](#Licence-Used)
 
 
@@ -149,3 +150,8 @@ This can be WebApi or UI.
 | API | https://localhost:44396/OpenAPI/index.html | https://bookmarkwebapi20200916112033.azurewebsites.net/OpenAPI/index.html | 
 | Health check | https://localhost:44329/healthchecks-ui#/healthchecks | https://bookmarkweb20200916110752.azurewebsites.net/healthchecks-ui#/healthchecks  |
 | React UI | http://localhost:3000 | https://bookmark-dashboard.web.app/ |
+
+## Licence Used
+[![MIT License][license-shield]][license-url]
+
+See the contents of the LICENSE file for details
