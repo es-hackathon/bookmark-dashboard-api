@@ -36,6 +36,7 @@
 * [Layer examples](#Layer-examples)
 * [Features available in this project](#Features-available-in-this-project)
 * [Solution Structure](#Solution-Structure)
+* [DB design](#DB-design)
 * [How to Run](#How-to-Run)
 * [Run or Debug the Solution](#Run-or-Debug-the-Solution)
 * [Application URLs](#Application-URLs)
@@ -91,6 +92,10 @@ This can be WebApi or UI.
 
 ![layer examples](./docs/solution-explorer.png)
 
+
+## DB design
+
+![DB design](./docs/db-design.png)
 
 ## How to Run
 ### Update Configuration

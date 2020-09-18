@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+<Node Id="IModel" Label="ApplicationDbContext" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" PropertyAccessMode="PropertyAccessMode.Default" ProductVersion="3.1.3" Annotations="Relational:MaxIdentifierLength: 128
+SqlServer:ValueGenerationStrategy: IdentityColumn" Category="Model" Group="Expanded" />
+<Node Id = "CardFavorite" Label="CardFavorite" Name="CardFavorite" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="ConstructorBinding: Microsoft.EntityFrameworkCore.Metadata.ConstructorBinding
+Relational:TableName: CardFavorite" Category="EntityType" Group="Expanded" />
+<Node Id = "Cards" Label="Cards" Name="Cards" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="ConstructorBinding: Microsoft.EntityFrameworkCore.Metadata.ConstructorBinding
+Relational:TableName: Cards" Category="EntityType" Group="Expanded" />
+<Node Id = "CardFavorite.Id" Label="Id" Name="Id" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn
+TypeMapping: Microsoft.EntityFrameworkCore.Storage.IntTypeMapping" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "CardFavorite.Cards" Label="Cards (1)" Name="Cards" Category="Navigation Property" Type="Cards"  Field="" Dependent="" Principal="Cards" Inverse="" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "CardFavorite.CardsId" Label="CardsId" Name="CardsId" Category="Property Foreign" Type="Nullable&lt;Guid&gt;" MaxLength="None" Field="nofield" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.Storage.GuidTypeMapping" IsPrimaryKey="False" IsForeignKey="True" IsRequired="False" IsIndexed="True" IsShadow="True" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "CardFavorite.RowVersion" Label="RowVersion" Name="RowVersion" Category="Property Optional" Type="byte[]" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerByteArrayTypeMapping" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="True" IsUnicode="True" ValueGenerated="ValueGenerated.OnAddOrUpdate" />
+<Node Id = "CardFavorite.User" Label="User" Name="User" Category="Property Optional" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerStringTypeMapping" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "GroupShared" Label="GroupShared" Name="GroupShared" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="ConstructorBinding: Microsoft.EntityFrameworkCore.Metadata.ConstructorBinding
+Relational:TableName: GroupShared" Category="EntityType" Group="Expanded" />
+<Node Id = "Cards.Id" Label="Id" Name="Id" Category="Property Primary" Type="Guid" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.Storage.GuidTypeMapping" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Cards.Created" Label="Created" Name="Created" Category="Property Required" Type="DateTime" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDateTimeTypeMapping" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cards.CreatedBy" Label="CreatedBy" Name="CreatedBy" Category="Property Optional" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerStringTypeMapping" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cards.Description" Label="Description" Name="Description" Category="Property Optional" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerStringTypeMapping" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cards.DisplayIcon" Label="DisplayIcon" Name="DisplayIcon" Category="Property Optional" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerStringTypeMapping" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cards.ExpireDate" Label="ExpireDate" Name="ExpireDate" Category="Property Optional" Type="Nullable&lt;DateTime&gt;" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDateTimeTypeMapping" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cards.LastModified" Label="LastModified" Name="LastModified" Category="Property Optional" Type="Nullable&lt;DateTime&gt;" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDateTimeTypeMapping" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cards.LastModifiedBy" Label="LastModifiedBy" Name="LastModifiedBy" Category="Property Optional" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerStringTypeMapping" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cards.Name" Label="Name" Name="Name" Category="Property Optional" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerStringTypeMapping" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cards.Url" Label="Url" Name="Url" Category="Property Optional" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerStringTypeMapping" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Groups" Label="Groups" Name="Groups" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="ConstructorBinding: Microsoft.EntityFrameworkCore.Metadata.ConstructorBinding
+Relational:TableName: Groups" Category="EntityType" Group="Expanded" />
+<Node Id = "GroupShared.CardsId" Label="CardsId" Name="CardsId" Category="Property Primary" Type="Guid" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.Storage.GuidTypeMapping" IsPrimaryKey="True" IsForeignKey="True" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "GroupShared.Cards" Label="Cards (1)" Name="Cards" Category="Navigation Property" Type="Cards"  Field="" Dependent="" Principal="Cards" Inverse="" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "GroupShared.Groups" Label="Groups (1)" Name="Groups" Category="Navigation Property" Type="Groups"  Field="" Dependent="" Principal="Groups" Inverse="GroupShareds" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "GroupShared.GroupsId" Label="GroupsId" Name="GroupsId" Category="Property Primary" Type="Guid" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.Storage.GuidTypeMapping" IsPrimaryKey="True" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "GroupShared.User" Label="User" Name="User" Category="Property Optional" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerStringTypeMapping" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Groups" Label="Groups" Name="Groups" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="" Category="EntityType" Group="Expanded" />
+<Node Id = "Groups.Id" Label="Id" Name="Id" Category="Property Primary" Type="Guid" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.Storage.GuidTypeMapping" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Groups.GroupShareds" Label="GroupShareds (*)" Name="GroupShareds" Category="Navigation Collection" Type="List&lt;GroupShared&gt;"  Field="" Dependent="GroupShared" Principal="" Inverse="Groups" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Groups.Description" Label="Description" Name="Description" Category="Property Optional" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerStringTypeMapping" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Groups.IsActive" Label="IsActive" Name="IsActive" Category="Property Required" Type="bool" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerBoolTypeMapping" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Groups.Name" Label="Name" Name="Name" Category="Property Optional" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerStringTypeMapping" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Groups.RowVersion" Label="RowVersion" Name="RowVersion" Category="Property Optional" Type="byte[]" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="TypeMapping: Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerByteArrayTypeMapping" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="True" IsUnicode="True" ValueGenerated="ValueGenerated.OnAddOrUpdate" />
+  </Nodes>
+  <Links>
+<Link Source = "IModel" Target="CardFavorite" Category="Contains" />
+<Link Source = "IModel" Target="Cards" Category="Contains" />
+<Link Source = "CardFavorite" Target="CardFavorite.Cards" Category="Contains" />
+<Link Source = "CardFavorite" Target="CardFavorite.Id" Category="Contains" />
+<Link Source="CardFavorite" Target="Cards" From="CardFavorite.CardsId" To="Cards.Id" Name="CardFavorite -> Cards" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "CardFavorite" Target="CardFavorite.CardsId" Category="Contains" />
+<Link Source = "CardFavorite" Target="CardFavorite.RowVersion" Category="Contains" />
+<Link Source = "CardFavorite" Target="CardFavorite.User" Category="Contains" />
+<Link Source = "IModel" Target="GroupShared" Category="Contains" />
+<Link Source = "Cards" Target="Cards.Id" Category="Contains" />
+<Link Source = "Cards" Target="Cards.Created" Category="Contains" />
+<Link Source = "Cards" Target="Cards.CreatedBy" Category="Contains" />
+<Link Source = "Cards" Target="Cards.Description" Category="Contains" />
+<Link Source = "Cards" Target="Cards.DisplayIcon" Category="Contains" />
+<Link Source = "Cards" Target="Cards.ExpireDate" Category="Contains" />
+<Link Source = "Cards" Target="Cards.LastModified" Category="Contains" />
+<Link Source = "Cards" Target="Cards.LastModifiedBy" Category="Contains" />
+<Link Source = "Cards" Target="Cards.Name" Category="Contains" />
+<Link Source = "Cards" Target="Cards.Url" Category="Contains" />
+<Link Source = "IModel" Target="Groups" Category="Contains" />
+<Link Source = "GroupShared" Target="GroupShared.Cards" Category="Contains" />
+<Link Source = "GroupShared" Target="GroupShared.Groups" Category="Contains" />
+<Link Source = "GroupShared" Target="GroupShared.CardsId" Category="Contains" />
+<Link Source="GroupShared" Target="Cards" From="GroupShared.CardsId" To="Cards.Id" Name="GroupShared -> Cards" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="GroupShared" Target="Groups" From="GroupShared.GroupsId" To="Groups.Id" Name="GroupShared -> Groups" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "GroupShared" Target="GroupShared.GroupsId" Category="Contains" />
+<Link Source = "GroupShared" Target="GroupShared.User" Category="Contains" />
+<Link Source = "IModel" Target="Groups" Category="Contains" />
+<Link Source = "Groups" Target="Groups.GroupShareds" Category="Contains" />
+<Link Source = "Groups" Target="Groups.Id" Category="Contains" />
+<Link Source = "Groups" Target="Groups.Description" Category="Contains" />
+<Link Source = "Groups" Target="Groups.IsActive" Category="Contains" />
+<Link Source = "Groups" Target="Groups.Name" Category="Contains" />
+<Link Source = "Groups" Target="Groups.RowVersion" Category="Contains" />
+  </Links>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="EntityType" ValueLabel="True">
+      <Condition Expression="HasCategory('EntityType')" />
+      <Setter Property="Background" Value="#FFC0C0C0" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Primary" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Primary')" />
+      <Setter Property="Background" Value="#FF008000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Optional" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Optional')" />
+      <Setter Property="Background" Value="#FF808040" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Foreign" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Foreign')" />
+      <Setter Property="Background" Value="#FF8080FF" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Required" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Required')" />
+      <Setter Property="Background" Value="#FFC0A000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Navigation Property" ValueLabel="True">
+      <Condition Expression="HasCategory('Navigation Property')" />
+      <Setter Property="Background" Value="#FF990000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Navigation Collection" ValueLabel="True">
+      <Condition Expression="HasCategory('Navigation Collection')" />
+      <Setter Property="Background" Value="#FFFF3232" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Model" ValueLabel="True">
+      <Condition Expression="HasCategory('Model')" />
+      <Setter Property="Background" Value="#FFFFFFFF" />
+    </Style>
+  </Styles>
+  <Properties>
+    <Property Id="Name" Group="Model Properties" DataType="System.String" />
+    <Property Id="Field"  Description="Backing field" Group="Model Properties" DataType="System.String" />
+    <Property Id="Type"  Description="CLR data type" Group="Model Properties" DataType="System.String" />
+    <Property Id="To" Description="Source property" Group="Model Properties" DataType="System.String" />
+    <Property Id="From" Description="Target property" Group="Model Properties" DataType="System.String" />
+    <Property Id="Dependent" Description="Dependent entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="Inverse" Description="Inverse entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="Principal" Description="Principal entity" Group="Model Properties" DataType="System.String" />    
+    <Property Id="Annotations" Description="Annotations" Group="Model Properties" DataType="System.String" />
+    <Property Id="BaseClass"  Description="Base class" Group="Model Properties" DataType="System.String" />
+    <Property Id="ChangeTrackingStrategy" Description="Change tracking strategy" Group="Model Properties" DataType="System.String" />
+    <Property Id="IsUnique" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="IsAbstract" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="ProductVersion" Label="Product Version" Description="EF Core product version" Group="Model Properties" DataType="System.String" />
+    <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsRequired" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsPrimaryKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsForeignKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsShadow" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsAlternateKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsConcurrencyToken" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsUnicode" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="ValueGenerated" Group="Property Flags" DataType="System.String" />
+    <Property Id="BeforeSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="AfterSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="PropertyAccessMode" Group="Property Flags" DataType="System.String" />
+  </Properties>
+</DirectedGraph>
