@@ -16,7 +16,7 @@
   <p align="center">
     Web API solution template which is built on Clean Architecture using .Net Core for bookmark dashboard project!
     <br />
-    <a href="https://amitpnk.github.io/Onion-architecture-ASP.NET-Core/"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/es-hackathon/bookmark-dashboard-api"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/es-hackathon/bookmark-dashboard-api">Download</a>
@@ -87,7 +87,7 @@ This can be WebApi or UI.
 
 ## Solution Structure
 
-![layer examples](./docs/layer-examples.png)
+![layer examples](./docs/solution-explorer.png)
 
 
 # How to Run
