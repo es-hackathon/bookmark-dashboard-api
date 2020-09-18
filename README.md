@@ -5,9 +5,6 @@
 
 # Bookmark Dashboard Web API
 
-
-
-
 <br />
 <p align="center">
   <a href="#">
@@ -32,11 +29,12 @@
 
 
 <!-- TABLE OF CONTENTS -->
-## Table of Contents
+# Table of Contents
 
 * [About the Project](#about-the-project)
-* [Getting Started](#getting-started)
 * [Features available in this project](#Features-available-in-this-project)
+* [Solution Structure](Solution-Structure)
+* [How to Run](#How-to-Run)
 * [Project description](#project-description)
 * [Design patterns Used](#roadmap)
 * [Licence Used](#Licence-Used)
@@ -46,51 +44,99 @@
 
 Web API solution template which is built on Clean Architecture using .Net Core for bookmark dashboard project!
 
+
+
 # Layer Dependencies
 
 ![layer dependencies](./docs/layer-dependencies.png)
 
-<details>
-  <summary><b>Domain layer</b></summary>
-  <p>
-    Domain Layers (Core layer) is implemented in center and never depends on any other layer. Therefore, what we do is that we create interfaces to Persistence layer and these interfaces get implemented in the external layers. This is also known and DIP or Dependency Inversion Principle
-  </p>
-</details>
-<details>
-  <summary><b>Persistence layer</b></summary>
-  <p>
-    In Persistence layer where we implement reposistory design pattern. In our project, we have implement Entityframework which already implements a repository design pattern. DbContext will be UoW (Unit of Work) and each DbSet is the repository. This interacts with our database using dataproviders
-  </p>
-</details>
-<details>
-  <summary><b>Application layer</b></summary>
-  <p>
-    Application layer where we can implement business logic. For OLAP/OLTP process, we can implement CQRS design pattern. In our project, we have implemented CQRS design pattern on top of Mediator design pattern via MediatR libraries
-  </p>
-  <p>In case you want to implement email feature logic, we define an IMailService in the Service Layer.
-  Using DIP, it is easily possible to switch the implementations. This helps build scalable applications.
-  </p>
-</details>
-<details>
-  <summary><b>Infrastructure Layer</b></summary>
-  <p>
-    In this layer, we add our third party libraries like JWT Tokens Authentication or Serilog for logging, etc.
-  </p>
-</details>
-<details>
-  <summary><b>Cross cutting concern</b></summary>
-  <p>
-    In this layer, we add caching and other logic which will be common to all layer
-  </p>
-</details>
-<details>
-  <summary><b>Presentation Layer</b></summary>
-  <p>
-    This can be WebApi or UI.
-  </p>
-</details>
+[(open on draw.io)](./docs/layer-dependencies.drawio)
 
+## Domain layer
+
+Domain Layers (Core layer) is implemented in center and never depends on any other layer. Therefore, what we do is that we create interfaces to Persistence layer and these interfaces get implemented in the external layers. This is also known and DIP or Dependency Inversion Principle
+
+## Persistence layer
+ 
+In Persistence layer where we implement reposistory design pattern. In our project, we have implement Entityframework which already implements a repository design pattern. DbContext will be UoW (Unit of Work) and each DbSet is the repository. This interacts with our database using dataproviders
+
+## Application layer 
+
+Application layer where we can implement business logic. For OLAP/OLTP process, we can implement CQRS design pattern. In our project, we have implemented CQRS design pattern on top of Mediator design pattern via MediatR libraries
+
+In case you want to implement email feature logic, we define an IMailService in the Service Layer.  Using DIP, it is easily possible to switch the implementations. This helps build scalable applications.
+
+## Infrastructure Layer
+
+In this layer, we add our third party libraries like JWT Tokens Authentication or Serilog for logging, etc.
+
+## Cross cutting concern
+
+In this layer, we add caching and other logic which will be common to all layer
+
+## Presentation Layer
+
+This can be WebApi or UI.
+ 
 ## Layer examples
 
 ![layer examples](./docs/layer-examples.png)
 
+[(open on draw.io)](./docs/layer-examples.drawio)
+
+## Solution Structure
+
+![layer examples](./docs/layer-examples.png)
+
+
+# How to Run
+## Update Configuration
+
+### Database 
+  
+- Update Connection Strings:
+
+  | Project  | Configuration File | Configuration Key |
+  | -------- | ------------------ | ----------------- |
+  | Bookmark.WebApi | appsettings.json | ConnectionStrings:BookmarkConn <br> ConnectionStrings:IdentityConnection |
+  | Bookmark.Web | appsettings.json | ConnectionStrings:BookmarkConn |
+
+- Run Migration:
+  + Option 1: Using dotnet cli:
+    + Install **dotnet-ef** cli:
+      ```
+      dotnet tool install --global dotnet-ef --version="3.1"
+      ```
+    + Navigate to [Bookmark.WebApi](https://github.com/es-hackathon/bookmark-dashboard-api/tree/develop/src/Bookmark.WebApi/) and run these commands:
+      ```
+      dotnet ef migrations add Initial-commit-Application --context ApplicationDbContext -o Migrations/Application
+      dotnet ef migrations add Identity-commit --context IdentityContext -o Migrations/Identity
+      dotnet ef database update --context ApplicationDbContext 
+      dotnet ef database update --context IdentityContext 
+      ```
+  + Option 2: Using Package Manager Console:
+    + Set **Bookmark.WebApi** as StartUp Project
+    + Open Package Manager Console, select **Bookmark.WebApi.Persistance** as Default Project
+    + Run these commands:
+      ```sh
+      PM> add-migration Initial-commit-Application -Context ApplicationDbContext -o Migrations/Application
+      
+      PM> update-database -Context ApplicationDbContext 
+      ```
+    + Open Package Manager Console, select **Bookmark.WebApi.Infrastructure** as Default Project
+    + Run these commands:
+      ```sh
+      PM> add-migration Identity-commit -Context IdentityContext -o Migrations/Identity
+      PM> update-database -Context IdentityContext 
+      ```
+
+
+## Run or Debug the Solution
+- Web MVC Home Page: https://localhost:44329/
+
+- Navigate to Health Checks UI https://localhost:44329/healthchecks-ui#/healthchecks and make sure everything is green.
+
+
+- Web API Page: https://localhost:44396/OpenAPI/index.html
+
+  ![alt text](/docs/web-api.png)
