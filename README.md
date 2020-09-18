@@ -52,29 +52,31 @@ Web API solution template which is built on Clean Architecture using .Net Core f
 
 [(open on draw.io)](./docs/layer-dependencies.drawio)
 
-## Domain layer
+[reference code project](https://www.codeproject.com/Articles/5273373/Whiteapp-ASP-NET-Core-using-Onion-Architecture)
+
+### Domain layer
 
 Domain Layers (Core layer) is implemented in center and never depends on any other layer. Therefore, what we do is that we create interfaces to Persistence layer and these interfaces get implemented in the external layers. This is also known and DIP or Dependency Inversion Principle
 
-## Persistence layer
+### Persistence layer
  
 In Persistence layer where we implement reposistory design pattern. In our project, we have implement Entityframework which already implements a repository design pattern. DbContext will be UoW (Unit of Work) and each DbSet is the repository. This interacts with our database using dataproviders
 
-## Application layer 
+### Application layer 
 
 Application layer where we can implement business logic. For OLAP/OLTP process, we can implement CQRS design pattern. In our project, we have implemented CQRS design pattern on top of Mediator design pattern via MediatR libraries
 
 In case you want to implement email feature logic, we define an IMailService in the Service Layer.  Using DIP, it is easily possible to switch the implementations. This helps build scalable applications.
 
-## Infrastructure Layer
+### Infrastructure Layer
 
 In this layer, we add our third party libraries like JWT Tokens Authentication or Serilog for logging, etc.
 
-## Cross cutting concern
+### Cross cutting concern
 
 In this layer, we add caching and other logic which will be common to all layer
 
-## Presentation Layer
+### Presentation Layer
 
 This can be WebApi or UI.
  
