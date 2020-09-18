@@ -39,6 +39,7 @@
 * [How to Run](#How-to-Run)
 * [Run or Debug the Solution](#Run-or-Debug-the-Solution)
 * [Application URLs](#Application-URLs)
+* [Technology stack](#Technology-stack)
 * [Licence Used](#Licence-Used)
 
 
@@ -150,6 +151,48 @@ This can be WebApi or UI.
 | API | https://localhost:44396/OpenAPI/index.html | https://bookmarkwebapi20200916112033.azurewebsites.net/OpenAPI/index.html | 
 | Health check | https://localhost:44329/healthchecks-ui#/healthchecks | https://bookmarkweb20200916110752.azurewebsites.net/healthchecks-ui#/healthchecks  |
 | React UI | http://localhost:3000 | https://bookmark-dashboard.web.app/ |
+
+## Technology stack
+
+Architecture Pattern
+- [x] Clean architecture
+- [x] Screaming architecture-[Functional organisation design](http://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html)
+
+Design Pattern
+- [x] CQRS design pattern
+- [x] Repository design pattern and UOW (Already implemented in EF Core, where DbSet acts as Repository and DbContext acts as UOW)
+- [x] Mediator design pattern
+
+Features
+- [x] Web API
+- [x] Entityframework Core - Code First
+- [x] Dataseeding
+- [x] Custom Exceptionn Handler
+- [x] Automapper
+- [x] Fluent validation
+- [x] Serilog
+- [x] Swagger UI
+- [x] Healthcheck UI
+- [x] InMemory caching
+- [x] API Versioning
+- [x] User Auditing (default config)
+- [x] Enabling CORS
+- [ ] Mailkit (Mail service)
+- [ ] Miniprofiler
+
+Testing
+- [x] Unit testing via NUnit
+- [ ] Integration testing via NUnit
+
+Authentication
+- [x] OAuth2 (via auth0.org)
+- [x] JWT Authentication
+
+UI
+- [x] MVC Core
+- [x] React-redux
+- [x] React widget
+- [ ] Kibana
 
 ## Licence Used
 [![MIT License][license-shield]][license-url]
